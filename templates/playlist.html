@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Mood Playlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/playlist.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🎵 Your Mood Playlist 🎵</h1>
+        <p>Curated for: <strong>{{ emotion }}</strong></p>
+    </header>
+    
+    <main>
+        {% if videos %}
+            <ul class="playlist">
+                {% for video in videos %}
+                    <li class="playlist-item">
+                        <h2>{{ video.title }}</h2>
+                        <p>Channel: {{ video.channel }}</p>
+                        <iframe 
+                            width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/{{ video.videoId }}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No videos found for the selected mood. Please try again later.</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>✨ Made with ❤️ by Mood Melody ✨</p>
+    </footer>
+</body>
+</html>

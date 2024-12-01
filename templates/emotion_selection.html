@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Mood - MoodMelody</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='emotion_selection.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Wrapper for Decorative Circles and Content -->
+    <div class="wrapper">
+        <!-- Decorative Circles -->
+        <div class="circle-bg"></div>
+        <div class="circle-bg"></div>
+
+        <!-- Main Content -->
+        <div class="content-container">
+            <h2>Select Your Mood</h2>
+            <p>Choose an emotion to create your playlist</p>
+            <form class="form-section" action="/generate_playlist" method="POST">
+                <button type="submit" class="happy" name="emotion" value="Happy">
+                    <div class="icon"><i class="fas fa-smile"></i></div>
+                    Happy
+                </button>
+                <button type="submit" class="sad" name="emotion" value="Sad">
+                    <div class="icon"><i class="fas fa-sad-tear"></i></div>
+                    Sad
+                </button>
+                <button type="submit" class="energetic" name="emotion" value="Energetic">
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
+                    Energetic
+                </button>
+                <button type="submit" class="calm" name="emotion" value="Calm">
+                    <div class="icon"><i class="fas fa-leaf"></i></div>
+                    Calm
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

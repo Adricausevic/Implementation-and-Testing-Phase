@@ -15,7 +15,7 @@ app.secret_key = os.urandom(24)
 # Google API credentials
 CLIENT_CONFIG = {
     "web": {
-        "client_id": "653989477873-q8a7r6m93eh4q2m4e15pndikknggp9n4.apps.googleusercontent.com",
+        "client_id": "653989477873-q8a7r6m93eh4q2m4e15pndikknggp9n4.apps.googleusercontent.com", # change client ID if using another API
         "project_id": "youtube-api-project-443317",
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "token_uri": "https://oauth2.googleapis.com/token",

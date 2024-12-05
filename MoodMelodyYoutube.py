@@ -25,7 +25,7 @@ CLIENT_CONFIG = {
     }
 }
 
-# Updated SCOPES
+# SCOPES to allow acces to users liked music videos
 SCOPES = [
     "https://www.googleapis.com/auth/youtube",
     "https://www.googleapis.com/auth/youtube.readonly"
@@ -79,7 +79,7 @@ def get_videos_for_emotion(youtube, emotion):
     }
     keywords = emotion_to_keywords.get(emotion, "official music video")
 
-    # Step 1: Fetch user's liked videos
+    # Fetch user's liked videos
     liked_videos_request = youtube.videos().list(
         part="snippet",
         myRating="like",
@@ -97,7 +97,7 @@ def get_videos_for_emotion(youtube, emotion):
         if "official" in item["snippet"]["title"].lower()
     ]
 
-    # Step 2: Fetch emotion-based recommendations
+    # Fetch emotion-based recommendations
     search_request = youtube.search().list(
         part="snippet",
         q=keywords,

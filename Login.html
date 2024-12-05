@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Mood Melody</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='loginPageStyle.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="circle-bg"></div>
+    <div class="content-container">
+        <div class="logo">
+            <h1>🎵 Mood Melody 🎵</h1>
+        </div>          
+      <h2>Discover your Mood Melody</h2>
+      <p class="description">
+        Personalized music playlists tailored to your mood.
+      </p>
+      <a href="{{ url_for('emotion_selection') }}" class="get-started-btn">
+        Login
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='loginPage.js') }}"></script>
+</body>
+</html>
